@@ -1,4 +1,4 @@
-package net.snackbag.testplugin;
+package me.yourname.showcase;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -19,12 +19,12 @@ public final class MainTest extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		Bukkit.getLogger().info("Startup");
-		Bukkit.getLogger().warning("Sussy!");
+		Bukkit.getLogger().warning("This is a startup message, §cyou can put as many as you want!");
 	}
 
 	@Override
 	public void onDisable() {
 		Bukkit.getLogger().info("Goodbye!");
-		Bukkit.getLogger().info("See you soon.");
+		Bukkit.getLogger().info("Here too.");
 	}
 }

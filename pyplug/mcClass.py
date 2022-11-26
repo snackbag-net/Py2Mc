@@ -6,13 +6,20 @@ from pyplug.creator.main import need_to_import
 def generator(inp: dict):
 	output = inp["generator"]["output"]
 	projname = inp["generator"]["name"]
-	id = inp["generator"]["id"]
+	id = str(inp["generator"]["id"])
+	id_fix = id.replace(".", "/")
+	id_split = id_fix.split("/")
 
 	os.mkdir(output + projname)
 	os.mkdir(output + projname + "/main")
 	os.mkdir(output + projname + "/main/java")
 	os.mkdir(output + projname + "/main/resources")
-	os.mkdir(output + projname + f"/main/java/{id}")
+
+	id_split_len = len(id_split)
+	last_split = ""
+	for i in range(id_split_len):
+		os.mkdir(output + projname + f"/main/java/{last_split}{id_split[i]}")
+		last_split += id_split[i] + "/"
 
 	####################################
 	############# [ MAIN ] #############
@@ -37,7 +44,7 @@ def generator(inp: dict):
 
 	#######################
 
-	mainfile = open(output + projname + f"/main/java/{id}/main.java", "w")
+	mainfile = open(output + projname + f"/main/java/{id_fix}/main.java", "w")
 
 	mainfile_output = [
 		f"package {id};\n",
