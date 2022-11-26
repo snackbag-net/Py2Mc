@@ -1,5 +1,6 @@
 import pyplug
-import pyplug.functions as function
+import pyplug.functions.generic as fn
+import pyplug.functions as cm
 
 plugin = {
 	"generator": {
@@ -14,13 +15,13 @@ plugin = {
 	},
 
 	"startup": [
-		function.logger.info("Startup"),
-		function.logger.warning("This is a startup message, you can put as many as you want!")
+		fn.logger.info("Startup"),
+		fn.logger.warning("This is a startup message, " + cm.color("red") + "you can put as many as you want!")
 	],
 
 	"disable": [
-		function.logger.info("Goodbye!"),
-		function.logger.info("Here too.")
+		fn.logger.info("Goodbye!"),
+		fn.logger.info("Here too.")
 	],
 
 }

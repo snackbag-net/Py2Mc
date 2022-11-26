@@ -1,4 +1,4 @@
-def get_color(text):
+def color(text):
 	if text == "black":
 		return f"§0"
 	elif text == "dark_blue":
