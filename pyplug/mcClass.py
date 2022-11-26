@@ -44,12 +44,12 @@ def generator(inp: dict):
 
 	#######################
 
-	mainfile = open(output + projname + f"/main/java/{id_fix}/main.java", "w")
+	mainfile = open(output + projname + f"/main/java/{id_fix}/Main.java", "w")
 
 	mainfile_output = [
 		f"package {id};\n",
 		imports + "\n\n",
-		"public final class MainTest extends JavaPlugin {",
+		"public final class Main extends JavaPlugin {",
 	]
 	tabindex = tabindex + 1
 	mainfile_output.append(tabindex * tab + "@Override")
