@@ -10,6 +10,11 @@ plugin = {
 
 	},
 
+	"plugin-settings": {
+		"name": "ShowcasePlugin",
+		"version": "1.0.0",
+	},
+
 	"commands": {
 
 	},

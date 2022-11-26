@@ -1,3 +1,6 @@
+import re
+
+
 def need_to_import(list_name: str) -> list:
 	if list_name == "main":
 		return [
@@ -15,3 +18,21 @@ def need_to_import(list_name: str) -> list:
 			"import org.bukkit.event.player.PlayerJoinEvent;",
 			"import org.bukkit.plugin.java.JavaPlugin;",
 		]
+
+
+def is_alphanumeric_str(text):
+	if (re.match(r'^[A-Za-z0-9_]+$', text) != None):
+		return True
+	return False
+
+
+def continue_cancel():
+	while True:
+		action = input("'continue' or 'cancel' process? Enter here: ")
+		action = action.lower()
+		if action == "continue":
+			return True
+		elif action == "cancel":
+			return False
+		else:
+			continue
