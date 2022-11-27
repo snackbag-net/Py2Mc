@@ -1,47 +1,47 @@
 def color(text):
 	if text == "black":
-		return f"§0"
+		return f"\" + ChatColor.BLACK + \""
 	elif text == "dark_blue":
-		return f"§1"
+		return f"\" + ChatColor.DARK_BLUE + \""
 	elif text == "dark_green":
-		return f"§2"
+		return f"\" + ChatColor.DARK_GREEN + \""
 	elif text == "dark_aqua":
-		return f"§3"
+		return f"\" + ChatColor.DARK_AQUA + \""
 	elif text == "dark_red":
-		return f"§4"
+		return f"\" + ChatColor.DARK_RED + \""
 	elif text == "dark_purple":
-		return f"§5"
+		return f"\" + ChatColor.DARK_PURPLE + \""
 	elif text == "gold":
-		return f"§6"
+		return f"\" + ChatColor.GOLD + \""
 	elif text == "gray":
-		return f"§7"
+		return f"\" + ChatColor.GRAY + \""
 	elif text == "dark_gray":
-		return f"§8"
+		return f"\" + ChatColor.DARK_GRAY + \""
 	elif text == "blue":
-		return f"§9"
+		return f"\" + ChatColor.BLUE + \""
 	elif text == "green":
-		return f"§a"
+		return f"\" + ChatColor.GREEN + \""
 	elif text == "aqua":
-		return f"§b"
+		return f"\" + ChatColor.AQUA + \""
 	elif text == "red":
-		return f"§c"
+		return f"\" + ChatColor.RED + \""
 	elif text == "light_purple":
-		return f"§d"
+		return f"\" + ChatColor.LIGHT_PURPLE + \""
 	elif text == "yellow":
-		return f"§e"
+		return f"\" + ChatColor.YELLOW + \""
 	elif text == "white":
-		return f"§f"
+		return f"\" + ChatColor.WHITE + \""
 	elif text == "obfuscated":
-		return f"§k"
+		return f"\" + ChatColor.MAGIC + \""
 	elif text == "bold":
-		return f"§l"
+		return f"\" + ChatColor.BOLD + \""
 	elif text == "strikethrough":
-		return f"§m"
+		return f"\" + ChatColor.STRIKETHROUGH + \""
 	elif text == "underline":
-		return f"§n"
+		return f"\" + ChatColor.UNDERLINE + \""
 	elif text == "italic":
-		return f"§o"
+		return f"\" + ChatColor.ITALIC + \""
 	elif text == "reset":
-		return f"§r"
+		return f"\" + ChatColor.RESET + \""
 	else:
-		return f"§r"
+		return f"\" + ChatColor.RESET + \""
