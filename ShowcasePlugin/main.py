@@ -15,9 +15,7 @@ plugin = {
 		"version": "1.0.0",
 	},
 
-	"commands": {
-
-	},
+	"register-event": ["joinEvent"],
 
 	"startup": [
 		fn.logger.info("Startup"),
@@ -31,4 +29,5 @@ plugin = {
 
 }
 
-pyplug.mcClass.generator(plugin)
+pyplug.mcClass.generate_args = plugin
+pyplug.mcClass.Generate()

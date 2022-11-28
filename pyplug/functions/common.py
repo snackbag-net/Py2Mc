@@ -1,3 +1,6 @@
+import pyplug.creator.storage as storage
+
+
 def color(text):
 	if text == "black":
 		return f"\" + ChatColor.BLACK + \""
@@ -45,3 +48,33 @@ def color(text):
 		return f"\" + ChatColor.RESET + \""
 	else:
 		return f"\" + ChatColor.RESET + \""
+
+
+class Var:
+	@staticmethod
+	def set(savepoint, name, value):
+		storage.variables[savepoint] = {}
+		storage.variables[savepoint][name] = value
+		return ""
+
+	@staticmethod
+	def get(savepoint, name):
+		try:
+			return storage.variables[savepoint][name]
+		except KeyError:
+			print(f"Error while getting variable 'storage.variables[{savepoint}][{name}]' - KeyError!")
+
+	@staticmethod
+	def clear(savepoint, name):
+		try:
+			del (storage.variables[savepoint][name])
+			return ""
+		except KeyError:
+			print(f"Error while del() variable 'storage.variables[{savepoint}][{name}]' - KeyError!")
+			return ""
+
+
+class Get:
+	@staticmethod
+	def name(player):
+		return f"\" + {player}.getName() + \""
