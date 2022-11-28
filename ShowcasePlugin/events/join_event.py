@@ -12,6 +12,7 @@ def join_event() -> dict:
 			cm.Var.set("joinEvent", "player", eventcm.DefineEventPlayer.python()),
 			eventcm.DefineEventPlayer.java(),
 			event.playerJoinEvent.set_join_message(cm.Get.name(cm.Var.get("joinEvent", "player")) + " has joined!"),
+			cm.send_actionbar(cm.Var.get("joinEvent", "player"), "Thanks for " + cm.color("blue") + "joining" + cm.color("reset") + "!")
 		],
 	}
 
