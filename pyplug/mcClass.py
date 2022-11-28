@@ -144,22 +144,26 @@ class Generate:
 
 		# Creation things
 		mainfile_path = output + projname + f"/main/java/{id_fix}/Main.java"
+		open(mainfile_path, "w")
 
 		tabindex = 0
 		tab = "\t"
 
 		len1 = len(inp["register-event"])
 
-		for events in range(len1):
-			self.imports[mainfile_path] = f"import {id}.events.{inp['register-event'][events]};\n"
+		self.imports[mainfile_path] = ""
 
+		for events in range(len1):
+			self.imports[mainfile_path] = self.imports[
+											  mainfile_path] + f"import {id}.events.{inp['register-event'][events]};\n"
+
+		# if self.imports[mainfile_path]:
 		self.imports[mainfile_path] = self.imports[mainfile_path] + "\n".join(need_to_import("main"))
 		print(f"\033[1mDEBUG:\033[0m\n{self.imports=}\n")
 
 		# print(imports)
 
 		#######################
-
 
 		mainfile = open(mainfile_path, "w")
 
@@ -172,7 +176,6 @@ class Generate:
 		mainfile_output.append(tabindex * tab + "@Override")
 		mainfile_output.append(tabindex * tab + "public void onEnable() {")
 		tabindex = tabindex + 1
-
 
 		for events in range(len1):
 			mainfile_output.append(
