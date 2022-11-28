@@ -78,3 +78,18 @@ class Get:
 	@staticmethod
 	def name(player):
 		return f"\" + {player}.getName() + \""
+
+
+def send_message(target, text):
+	return f"{target}.sendMessage(\"{text}\");"
+
+
+def send_title(target, title, subtitle, fade_in: int = None, stay: int = None, fade_out: int = None) -> str:
+	if fade_in is None:
+		return f"{target}.sendTitle(\"{title}\", \"{subtitle}\");"
+	else:
+		return f"{target}.sendTitle(\"{title}\", \"{subtitle}\", {fade_in}, {stay}, {fade_out});"
+
+
+def send_actionbar(target, text):
+	return f"{target}.sendTitle(ChatMessageType.ACTION_BAR, new TextComponent(\"{text}\"));"

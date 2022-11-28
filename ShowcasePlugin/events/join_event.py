@@ -1,8 +1,7 @@
 import pyplug.event as event
+import pyplug.event.common as eventcm
 import pyplug.functions.common as cm
 import pyplug.functions as fn
-import pyplug.event.common as eventcm
-# import pyplug.event.playerJoinEvent
 
 
 def join_event() -> dict:
