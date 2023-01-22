@@ -158,7 +158,8 @@ class Generate:
 											  mainfile_path] + f"import {id}.events.{inp['register-event'][events]};\n"
 
 		# if self.imports[mainfile_path]:
-		self.imports[mainfile_path] = self.imports[mainfile_path] + "\n".join(need_to_import("main"))
+		self.imports[mainfile_path] = self.imports[mainfile_path] + ";\n".join(need_to_import("main"))
+		self.imports[mainfile_path] = self.imports[mainfile_path] + ";"
 		print(f"\033[1mDEBUG:\033[0m\n{self.imports=}\n")
 
 		# print(imports)
@@ -172,6 +173,7 @@ class Generate:
 			self.imports[mainfile_path] + "\n\n",
 			"public final class Main extends JavaPlugin {",
 		]
+
 		tabindex = tabindex + 1
 		mainfile_output.append(tabindex * tab + "@Override")
 		mainfile_output.append(tabindex * tab + "public void onEnable() {")
@@ -180,13 +182,13 @@ class Generate:
 		for events in range(len1):
 			mainfile_output.append(
 				tabindex * tab + f"getServer().getPluginManager().registerEvents(new {inp['register-event'][events]}, this);")
-		mainfile_output.append(tabindex * tab + f"\n{tabindex * tab}".join(on_startup))
+		mainfile_output.append(tabindex * tab + f";\n{tabindex * tab}".join(on_startup) + ";")
 		tabindex = tabindex - 1
 		mainfile_output.append(tabindex * tab + "}\n")
 		mainfile_output.append(tabindex * tab + "@Override")
 		mainfile_output.append(tabindex * tab + "public void onDisable() {")
 		tabindex = tabindex + 1
-		mainfile_output.append(tabindex * tab + f"\n{tabindex * tab}".join(on_disable))
+		mainfile_output.append(tabindex * tab + f";\n{tabindex * tab}".join(on_disable) + ";")
 		tabindex = tabindex - 1
 		mainfile_output.append(tabindex * tab + "}")
 		tabindex = tabindex - 1

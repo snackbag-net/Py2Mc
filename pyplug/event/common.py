@@ -5,14 +5,14 @@ class DefineEventPlayer:
 
 	@staticmethod
 	def java():
-		return "Player eventPlayer = event.getPlayer();"
+		return "Player eventPlayer = event.getPlayer()"
 
 
 def cancel(boolean: bool = True) -> str:
 	if boolean is False:
-		return "event.setCancelled(false);"
+		return "event.setCancelled(false)"
 	elif boolean is True:
-		return "event.setCancelled(true);"
+		return "event.setCancelled(true)"
 	else:
 		return ""
 

@@ -7,13 +7,13 @@ import pyplug.event.common
 def need_to_import(list_name: str) -> list:
 	if list_name == "main":
 		return [
-			"import java.util.logging.Logger;",
-			"import org.bukkit.Bukkit;",
-			"import org.bukkit.ChatColor;",
-			"import org.bukkit.command.Command;",
-			"import org.bukkit.command.CommandSender;",
-			"import org.bukkit.entity.Player;",
-			"import org.bukkit.plugin.java.JavaPlugin;",
+			"import java.util.logging.Logger",
+			"import org.bukkit.Bukkit",
+			"import org.bukkit.ChatColor",
+			"import org.bukkit.command.Command",
+			"import org.bukkit.command.CommandSender",
+			"import org.bukkit.entity.Player",
+			"import org.bukkit.plugin.java.JavaPlugin",
 		]
 
 
@@ -24,25 +24,29 @@ def code_event(list_name: list, register: dict, package) -> str:
 	tabindex = 0
 	tab = "\t"
 	imports = [
-		"import org.bukkit.entity.Player;",
-		"import org.bukkit.event.EventHandler;",
-		"import org.bukkit.event.Listener;",
-		"import net.md_5.bungee.api.ChatMessageType;",
-		"import net.md_5.bungee.api.chat.TextComponent;",
+		"import org.bukkit.entity.Player",
+		"import org.bukkit.event.EventHandler",
+		"import org.bukkit.event.Listener",
+		"import net.md_5.bungee.api.ChatMessageType",
+		"import net.md_5.bungee.api.chat.TextComponent",
 	]
 
 	if event_name == "player_join_event":
-		print(register["execute"])
+		print(f"{register['execute']=}")
 		imports.append(event)
 		return_code = []
-		return_code.append("package " + package + ";")
-		return_code.append(tab * tabindex + "\n".join(imports))
+		return_code.append("package " + package + ";\n")
+		len_imports = len(imports)
+
+		for i in range(len_imports):
+			return_code.append(tab * tabindex + imports[i] + ";")
+
 		return_code.append(tab * tabindex + f"\npublic class {name} implements Listener " + "{")
 		tabindex = tabindex + 1
 		return_code.append(tab * tabindex + "\n@EventHandler")
 		return_code.append(tab * tabindex + "public static void onPlayerJoin(PlayerJoinEvent event) {")
 		tabindex = tabindex + 1
-		return_code.append(tab * tabindex + f"\n{tab*tabindex}".join(register["execute"]))
+		return_code.append(tab * tabindex + f";\n{tab * tabindex}".join(register["execute"]) + ";")
 		tabindex = tabindex - 1
 		return_code.append(tab * tabindex + "}")
 		tabindex = tabindex - 1

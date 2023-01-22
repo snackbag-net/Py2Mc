@@ -26,7 +26,6 @@ plugin = {
 		fn.logger.info("Goodbye!"),
 		fn.logger.info("Here too.")
 	],
-
 }
 
 pyplug.mcClass.generate_args = plugin
