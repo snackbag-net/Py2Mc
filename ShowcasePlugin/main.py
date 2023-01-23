@@ -1,13 +1,13 @@
 import pyplug
-import pyplug.functions.generic as fn
-import pyplug.functions as cm
+from pyplug import class_handler as ch
 
 plugin = {
 	"generator": {
 		"output": "out/",
 		"name": "ShowcasePlugin",
 		"id": "me.yourname.showcase",
-
+		"autocompile": False,
+		"autocompile_path": None
 	},
 
 	"plugin-settings": {
@@ -15,18 +15,13 @@ plugin = {
 		"version": "1.0.0",
 	},
 
-	"register-event": ["joinEvent"],
-
 	"startup": [
-		fn.logger.info("Startup"),
-		fn.logger.warning("This is a startup message, " + cm.color("red") + "you can put as many as you want!")
+
 	],
 
 	"disable": [
-		fn.logger.info("Goodbye!"),
-		fn.logger.info("Here too.")
+
 	],
 }
 
-pyplug.mcClass.generate_args = plugin
-pyplug.mcClass.Generate()
+ch.Generator(plugin)
