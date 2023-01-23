@@ -1,5 +1,6 @@
 import pyplug
 from pyplug import class_handler as ch
+from pyplug.functions import *
 
 plugin = {
 	"generator": {
@@ -16,7 +17,8 @@ plugin = {
 	},
 
 	"startup": [
-
+		Log.info("Hello!"),
+		Log.info("LOL!")
 	],
 
 	"disable": [
