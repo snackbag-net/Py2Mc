@@ -1,0 +1,1 @@
+variables = {} # {namespace, key, value}
