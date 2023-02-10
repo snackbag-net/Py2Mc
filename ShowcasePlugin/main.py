@@ -2,6 +2,8 @@ import pyplug
 from pyplug import class_handler as ch
 from pyplug.functions import *
 
+import ShowcasePlugin.events as events
+
 plugin = {
 	"generator": {
 		"output": "out/",
@@ -15,6 +17,9 @@ plugin = {
 		"name": "ShowcasePlugin",
 		"version": "1.0.0",
 	},
+
+	"events": [events.OnPlayerJoin.retev()],
+	"commands": None,
 
 	"startup": [
 		Log.info("Hello!"),
