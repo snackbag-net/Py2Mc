@@ -1,3 +1,6 @@
+# Archived
+Py2Mc will be archived for now. I am planning on bringing it back some day, but I'm not sure.
+
 # Py2Mc - STILL IN ALPHA. DON'T USE ON PRODUCTION. MORE INFO: [here](#still-in-beta)
 Py2Mc is a tool for Paper/Spigot/Bukkit servers, which allows faster/easier coding of minecraft plugins. 
 
